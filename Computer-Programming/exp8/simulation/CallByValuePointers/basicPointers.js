@@ -93,6 +93,11 @@ window.view = {
 		previousSiblingElement = previousSiblingElement.previousSibling;
 		return previousSiblingElement;
 	},
+	// applyColorAtMemoryAddress: apply colour at given position in memory table.
+	applyColorAtMemoryAddress: function (id, color) {
+		var tableRow = document.getElementById(id);
+		tableRow.bgColor = color;
+	},
 	// codeExecutionWithColour: shows execution of code by changing color in code Content.
 	codeExecutionWithColour: function () {
 		this.removeColorClass(this.currentSiblingElement.id, 'redClass');
@@ -110,6 +115,7 @@ window.view = {
 		this.setInnerHtml('60byte3', '');
 		this.setInnerHtml('60byte4', '');
 		this.setInnerHtml('60variable', '');
+		this.applyColorAtMemoryAddress('memoryAddress60', 'white');
 	},
 	// eraseValueAtAddress56: erase value from memory map where address is 56.
 	eraseValueAtAddress56: function () {
@@ -117,6 +123,7 @@ window.view = {
 		this.setInnerHtml('56byte2', '');
 		this.setInnerHtml('56byte3', '');
 		this.setInnerHtml('56byte4', '');
+		this.applyColorAtMemoryAddress('memoryAddress56', 'white');
 	},
 	// setValueAtAddress60: set value in memory map where address is 60.
 	setValueAtAddress60: function () {
@@ -125,6 +132,7 @@ window.view = {
 		this.setInnerHtml('60byte3', '0');
 		this.setInnerHtml('60byte4', '10');
 		this.setInnerHtml('60variable', 'A');
+		this.applyColorAtMemoryAddress('memoryAddress60', 'Yellow');
 	},
 	// setValueAtAddress56: set value in memory map where address is 56.
 	setValueAtAddress56: function () {
@@ -132,12 +140,14 @@ window.view = {
 		this.setInnerHtml('56byte2', '0');
 		this.setInnerHtml('56byte3', '0');
 		this.setInnerHtml('56byte4', '60');
+		this.applyColorAtMemoryAddress('memoryAddress56', 'Yellow');
 	},
 	// resetTable: calls methods that erase values from memory map. 
 	resetTable: function () {
 		this.eraseValueAtAddress60();
 		this.eraseValueAtAddress56();
 		this.setInnerHtml('56variable', '');
+		this.applyColorAtMemoryAddress('56variable', 'white');
 	},
 	// resetVariables: reset all variables to it's initial state at the end of code execution.
 	resetVariables: function () {
@@ -213,6 +223,7 @@ window.view = {
 		else if (this.nextSiblingElement.id === 'codeContentBP6') {
 			this.setInnerHtml('56variable', 'P');
 			this.eraseStringFromElement('outputText', 'explanationText', this.explanationBP5);
+			this.applyColorAtMemoryAddress('56variable', 'Yellow');
 		}
 		else if (this.nextSiblingElement.id === 'codeContentBP7') {
 			this.setString('explanationText', this.explanationBP6);
@@ -232,9 +243,6 @@ window.view = {
 			this.eraseStringFromElement('explanationText', 'outputText', this.outputBP6);
 		else if (this.nextSiblingElement.id === 'codeContentBP13') {
 			this.eraseStringFromElement('outputText', 'explanationText', this.explanationBP9);
-			// this.disableElement('nextBtnId');
-			// alert('Code running is Over !');
-			// this.endOfExecution();
 		}
 	},
 	// reverseExecution: show values in memory map  and shows Code Output or Explanation during reverse of code execution.
@@ -258,6 +266,7 @@ window.view = {
 		else if (this.previousSiblingElement.id === 'codeContentBP5') {
 			this.setStringInElement(this.outputBP2, this.explanationBP4);
 			this.setInnerHtml('56variable', '');
+			this.applyColorAtMemoryAddress('56variable', 'white');
 		}
 		else if (this.previousSiblingElement.id === 'codeContentBP6') {
 			this.eraseStringFromElement('outputText', 'explanationText', this.explanationBP5);
