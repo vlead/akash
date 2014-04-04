@@ -4,12 +4,247 @@ var res3 = new Array();
 var res4 = new Array();
 var res5 = new Array();
 var res6 = new Array();
+var res7 = new Array();
+var res8 = new Array();
 var romanNumeral,decimal;
 function add(first,second)
 {
 	var firstValue = document.getElementById('first').value.toUpperCase();
 	var secondValue = document.getElementById('second').value.toUpperCase();
 	 	
+	Subtractives(firstValue,secondValue);
+	var thirdValue = document.getElementById('third').value;
+	var fourthValue = document.getElementById('fourth').value;
+
+	var res = thirdValue.concat(fourthValue);
+	document.getElementById('fifth').value = res;//display's concatinated value.
+	
+	Sorting(res);
+	var res6 = document.getElementById('sixth').value
+	
+	var partialresult1 = matching(res6);
+	alert(partialresult1);
+	var partialresult2 = matching(partialresult1);
+	//alert(partialresult2);
+	
+	
+ }
+function mul(first,second)
+{
+	var firstValue = document.getElementById('first').value.toUpperCase();
+	var secondValue = document.getElementById('second').value.toUpperCase();
+
+	Subtractives(firstValue,secondValue);
+	var thirdValue = document.getElementById('third').value;
+	var fourthValue = document.getElementById('fourth').value;
+	
+	var res1 = thirdValue;
+	var res2 = fourthValue;
+
+	for(i=0;i<res1.length;i++)
+	{
+	 res3[i] = res1.charAt(i);
+	}	
+	res5 = toDecimal(res3);
+	//alert(res5.length);
+	for(i=0;i<res2.length;i++)
+	{
+	 res4[i] = res2.charAt(i);
+	}	
+	res6 = toDecimal(res4);
+	//alert(res6.length);
+	for(i=0;i<res5.length;i++)
+	{
+	for(j=0;j<res6.length;j++)
+	{
+	 res7[i] = res5[i]*res6[j];
+	//alert(res7[i]);
+
+	res8 += IntegerToRomanNumeral(res7[i]);
+	}
+	}
+	document.getElementById('fifth').value = res8;
+
+	Sorting(res8);
+	var res6 = document.getElementById('sixth').value;
+
+	var partialresult1 = matching(res6);
+	alert(partialresult1);
+	var partialresult2 = matching(partialresult1);
+	//alert(partialresult2);
+
+}
+function matching(res6)
+	{
+		
+	var pattn1 = /[VV]{2}/g;var result1 = res6.match(pattn1);var res7 = res6.replace(/[VV]{2}/g,"X");
+	var pattn2 = /[LL]{2}/g;var result2 = res6.match(pattn2);var res8 = res7.replace(/[LL]{2}/g,"C");
+	var pattn3 = /[DD]{2}/g;var result3 = res6.match(pattn3);var res9 = res8.replace(/[DD]{2}/g,"M");
+	var pattn4 = /[I]{5}/g;var result4 = res6.match(pattn4);var res10 = res9.replace(/[I]{5}/g,"V");
+	var pattn5 = /[I]{4}/g;var result5 = res6.match(pattn5);var res11 = res10.replace(/[I]{4}/g,"IV");
+	var pattn6 = /[X]{5}/g;var result6 = res6.match(pattn6);var res12 = res11.replace(/[X]{5}/g,"L");
+	var pattn7 = /[X]{4}/g;var result7 = res6.match(pattn7);var res13 = res12.replace(/[X]{4}/g,"XL");
+	var pattn8 = /[C]{5}/g;var result8 = res6.match(pattn8);var res14 = res13.replace(/[C]{5}/g,"D");
+	var pattn9 = /[C]{4}/g;var result9 = res6.match(pattn9);var res15 = res14.replace(/[C]{4}/g,"CD");
+	var pattn10 = /[V][I]{4}/g;var result10 = res6.match(pattn10);var res16 = res15.replace(/[V][I]{4}/g,"IX");
+	var pattn11 = /[L][X]{4}/g;var result11 = res6.match(pattn11);var res17 = res16.replace(/[L][X]{4}/g,"XC");
+	var pattn12 =/[D][C]{4}/g;var result12 = res6.match(pattn12);var res18 = res17.replace(/[D][C]{4}/g,"CM"); 
+	
+		
+	if(result1 || result2 || result3 || result4 || result6 || result8 || result10 || result11 || result12)
+	{
+		if(result1)
+		{	
+		document.getElementById('seventh').value = result1;
+		document.getElementById('eighth').value = "X";
+		var res7 = res6.replace(/[VV]{2}/g,"X");
+		//alert(res7);
+		document.getElementById('ninth').value = res7;
+		return res7;
+		}
+		if(result2)
+		{
+		document.getElementById('seventh').value = result2;
+		document.getElementById('eighth').value = "C";
+		var res8 = res7.replace(/[LL]{2}/g,"C");
+		//alert(res8);
+		document.getElementById('ninth').value = res8;
+		return res8;
+		}
+		if(result3)
+		{
+		document.getElementById('seventh').value = result3;
+		document.getElementById('eighth').value = "M";
+		var res9 = res8.replace(/[DD]{2}/g,"M");
+		//alert(res9);
+		document.getElementById('ninth').value = res9;
+		return res9;
+		}
+		if(result4)
+		{
+		document.getElementById('seventh').value = result4;
+		document.getElementById('eighth').value = "V";
+		var res10 = res6.replace(/[I]{5}/g,"V");
+		//alert(res10);
+		document.getElementById('ninth').value = res10;
+		return res10;
+		}
+		
+		if(result6)
+		{
+		document.getElementById('seventh').value = result6;
+		document.getElementById('eighth').value = "L";
+		var res11 = res6.replace(/[X]{5}/g,"L");
+		//alert(res10);
+		document.getElementById('ninth').value = res11;
+		return res11;
+		}
+
+		if(result8)
+		{
+		document.getElementById('seventh').value = result8;
+		document.getElementById('eighth').value = "D";
+		var res14 = res6.replace(/[C]{5}/g,"D");
+		//alert(res10);
+		document.getElementById('ninth').value = res14;
+		return res14;
+		}
+		
+
+		if(result10)
+		{
+		document.getElementById('seventh').value = result10;
+		document.getElementById('eighth').value = "IX";
+		var res16 = res6.replace(/[V][I]{4}/g,"IX");
+		//alert(res10);
+		document.getElementById('ninth').value = res16;
+		return res16;
+		}
+
+				
+		if(result11)
+		{
+		document.getElementById('seventh').value = result11;
+		document.getElementById('eighth').value = "XC";
+		var res17 = res6.replace(/[L][X]{4}/g,"XC");
+		//alert(res10);
+		document.getElementById('ninth').value = res17;
+		return res17;
+		}
+		
+		
+		if(result12)
+		{
+		document.getElementById('seventh').value = result12;
+		document.getElementById('eighth').value = "CM";
+		var res18 = res6.replace(/[D][C]{4}/g,"CM");
+		//alert(res10);
+		document.getElementById('ninth').value = res18;
+		return res18;
+		}
+
+		
+	}
+
+	else if(result5 || result7 || result9)
+	{
+		if(result5)
+		{
+		document.getElementById('seventh').value = result5;
+		document.getElementById('eighth').value = "IV";
+		var res11 = res6.replace(/[I]{4}/g,"IV");
+		//alert(res10);
+		document.getElementById('ninth').value = res11;
+		return res11;
+		}
+		if(result7)
+		{
+		document.getElementById('seventh').value = result7;
+		document.getElementById('eighth').value = "XL";
+		var res13 = res6.replace(/[X]{4}/g,"XL");
+		//alert(res10);
+		document.getElementById('ninth').value = res13;
+		return res13;
+		}
+		if(result9)
+		{
+		document.getElementById('seventh').value = result9;
+		document.getElementById('eighth').value = "CD";
+		var res15 = res6.replace(/[C]{4}/g,"CD");
+		//alert(res10);
+		document.getElementById('ninth').value = res15;
+		return res15;
+		}
+
+	}
+	else
+	{
+		document.getElementById('ninth').value = res6;
+	}
+	
+	}
+function Sorting(res)
+{
+	for(i=0;i<res.length;i++)
+	{
+	 res1[i] = res.charAt(i);
+	}	
+	res2 = toDecimal(res1);
+	res3 = res2.sort(function(a,b){return a-b});
+	res4 = res3.reverse();
+	var res5 = toRoman(res3);
+	var teststring = "";
+	for(var i=0;i<res.length;i++)
+	{
+	teststring +=res5[i];
+	}
+	var res6 = teststring;
+	//alert(res6);
+	document.getElementById('sixth').value = res6;//display's sorted value.
+
+}
+function Subtractives(firstValue,secondValue)
+{
 	var patt1 = /[I][V]/g;var patt2 = /[I][X]/g;
 	var cond1=firstValue.match(patt1);var cond3 = firstValue.match(patt2);
 	var cond2=secondValue.match(patt1);var cond4 = secondValue.match(patt2);
@@ -103,182 +338,7 @@ function add(first,second)
 	}
 
 
-	var res = resultf1.concat(resultf2);
-	document.getElementById('fifth').value = res;//display's concatinated value.
-	for(i=0;i<res.length;i++)
-	{
-	 res1[i] = res.charAt(i);
-	}	
-	res2 = toDecimal(res1);
-	res3 = res2.sort(function(a,b){return a-b});
-	res4 = res3.reverse();
-	var res5 = toRoman(res3);
-	var teststring = "";
-	for(var i=0;i<res.length;i++)
-	{
-	teststring +=res5[i];
-	}
-	var res6 = teststring;
-	//alert(res6);
-	document.getElementById('sixth').value = res6;//display's sorted value.
-	var res6 = teststring;
-	var partialresult1 = matching(res6);
-	alert(partialresult1);
-	var partialresult2 = matching(partialresult1);
-	//alert(partialresult2);
-	function matching(res6)
-	{
-		
-	var pattn1 = /[VV]{2}/g;var result1 = res6.match(pattn1);var res7 = res6.replace(/[VV]{2}/g,"X");
-	var pattn2 = /[LL]{2}/g;var result2 = res6.match(pattn2);var res8 = res7.replace(/[LL]{2}/g,"C");
-	var pattn3 = /[DD]{2}/g;var result3 = res6.match(pattn3);var res9 = res8.replace(/[DD]{2}/g,"M");
-	var pattn4 = /[I]{5}/g;var result4 = res6.match(pattn4);var res10 = res9.replace(/[I]{5}/g,"V");
-	var pattn5 = /[I]{4}/g;var result5 = res6.match(pattn5);var res11 = res10.replace(/[I]{4}/g,"IV");
-	var pattn6 = /[X]{5}/g;var result6 = res6.match(pattn6);var res12 = res11.replace(/[X]{5}/g,"L");
-	var pattn7 = /[X]{4}/g;var result7 = res6.match(pattn7);var res13 = res12.replace(/[X]{4}/g,"XL");
-	var pattn8 = /[C]{5}/g;var result8 = res6.match(pattn8);var res14 = res13.replace(/[C]{5}/g,"D");
-	var pattn9 = /[C]{4}/g;var result9 = res6.match(pattn9);var res15 = res14.replace(/[C]{4}/g,"CD");
-	var pattn10 = /[V][I]{4}/g;var result10 = res6.match(pattn10);var res16 = res15.replace(/[V][I]{4}/g,"IX");
-	var pattn11 = /[L][X]{4}/g;var result11 = res6.match(pattn11);var res17 = res16.replace(/[L][X]{4}/g,"XC");
-	var pattn12 =/[D][C]{4}/g;var result12 = res6.match(pattn12);var res18 = res17.replace(/[D][C]{4}/g,"CM"); 
-	
-		
-	if(result1 || result2 || result3 || result4 || result6 || result8 || result10 || result11 || result12)
-	{
-		if(result1)
-		{	
-		document.getElementById('seventh').value = result1;
-		document.getElementById('eighth').value = "X";
-		var res7 = res6.replace(/[VV]{2}/g,"X");
-		//alert(res7);
-		document.getElementById('ninth').value = res7;
-		return res7;
-		}
-		if(result2)
-		{
-		document.getElementById('seventh').value = result2;
-		document.getElementById('eighth').value = "C";
-		var res8 = res7.replace(/[LL]{2}/g,"C");
-		//alert(res8);
-		document.getElementById('ninth').value = res8;
-		return res8;
-		}
-		if(result3)
-		{
-		document.getElementById('seventh').value = result3;
-		document.getElementById('eighth').value = "M";
-		var res9 = res8.replace(/[DD]{2}/g,"M");
-		//alert(res9);
-		document.getElementById('ninth').value = res9;
-		return res9;
-		}
-		if(result4)
-		{
-		document.getElementById('seventh').value = result4;
-		document.getElementById('eighth').value = "V";
-		var res10 = res6.replace(/[I]{5}/g,"V");
-		//alert(res10);
-		document.getElementById('ninth').value = res10;
-		return res10;
-		}
-		
-		if(result6)
-		{
-		document.getElementById('seventh').value = result6;
-		document.getElementById('eighth').value = "L";
-		var res11 = res6.replace(/[X]{5}/g,"L");
-		//alert(res10);
-		document.getElementById('ninth').value = res11;
-		return res11;
-		}
-
-		if(result8)
-		{
-		document.getElementById('seventh').value = result8;
-		document.getElementById('eighth').value = "D";
-		var res14 = res6.replace(/[C]{5}/g,"D");
-		//alert(res10);
-		document.getElementById('ninth').value = res14;
-		return res14;
-		}
-		
-
-		if(result10)
-		{
-		document.getElementById('seventh').value = result10;
-		document.getElementById('eighth').value = "IX";
-		var res16 = res6.replace(/[V][I]{4}/g,"IX");
-		//alert(res10);
-		document.getElementById('ninth').value = res16;
-		return res16;
-		}
-
-		
-
-		
-		if(result11)
-		{
-		document.getElementById('seventh').value = result11;
-		document.getElementById('eighth').value = "XC";
-		var res17 = res6.replace(/[L][X]{4}/g,"XC");
-		//alert(res10);
-		document.getElementById('ninth').value = res17;
-		return res17;
-		}
-		
-		
-		if(result12)
-		{
-		document.getElementById('seventh').value = result12;
-		document.getElementById('eighth').value = "CM";
-		var res18 = res6.replace(/[D][C]{4}/g,"CM");
-		//alert(res10);
-		document.getElementById('ninth').value = res18;
-		return res18;
-		}
-
-		
-	}
-
-	else if(result5 || result7 || result9)
-	{
-		if(result5)
-		{
-		document.getElementById('seventh').value = result5;
-		document.getElementById('eighth').value = "IV";
-		var res11 = res6.replace(/[I]{4}/g,"IV");
-		//alert(res10);
-		document.getElementById('ninth').value = res11;
-		return res11;
-		}
-		if(result7)
-		{
-		document.getElementById('seventh').value = result7;
-		document.getElementById('eighth').value = "XL";
-		var res13 = res6.replace(/[X]{4}/g,"XL");
-		//alert(res10);
-		document.getElementById('ninth').value = res13;
-		return res13;
-		}
-		if(result9)
-		{
-		document.getElementById('seventh').value = result9;
-		document.getElementById('eighth').value = "CD";
-		var res15 = res6.replace(/[C]{4}/g,"CD");
-		//alert(res10);
-		document.getElementById('ninth').value = res15;
-		return res15;
-		}
-
-	}
-	else
-	{
-		document.getElementById('ninth').value = res6;
-	}
-	
-	}
-	
- }
+}
 function toDecimal(roman)
 {
 	var decimal = new Array();    
