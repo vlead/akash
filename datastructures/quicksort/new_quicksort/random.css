@@ -1,0 +1,90 @@
+
+body{
+	text-align: center ;
+	}
+
+.test_style{
+	-webkit-user-modify: read-write;
+	position: relative;
+	height: 4%;
+	width:4%;
+	border: 2px solid #666;
+	-webkit-box-shadow:0 0 10px 0 #666 inset; 
+ 	-moz-box-shadow:0 0 5px 0 #666 inset; 
+ 	box-shadow:0 0 5px 0 #666 inset;
+ 	text-align:center; 
+ 	text-indent:0px;
+ 	float: left;
+}
+
+
+input.test_style:focus { outline:none; }
+
+
+.textfield{
+	position:relative;
+	height: 20%;
+	width: 98%;
+
+}
+
+.best_case{
+	position:relative;
+	/*height: 20px;
+	width: 70px;	*/
+}
+
+.worest_case{
+	position:relative;
+	/*height: ;
+	width: 98%;	
+*/}
+
+.random_input{
+	position:relative;
+/*	height: 20%;
+	width: 98%;	*/
+}
+
+/*input{ 
+ 	border:none;
+ 	border-radius:5px;  
+ 	-webkit-border-radius:5px; 
+ 	-moz-border-radius:5px; 
+ 	-webkit-box-shadow:0 0 10px 0 #666 inset; 
+ 	-moz-box-shadow:0 0 5px 0 #666 inset; 
+ 	box-shadow:0 0 5px 0 #666 inset;
+ 	text-align:center; 
+ 	height:5%; 
+ 	line-height:25%; 
+ 	width:5%; 
+ 	text-indent:0px; 
+} 
+
+.quicksortbutton{
+	padding: 10%
+}
+
+.array_size,.display_button,.display_textfields,.callingQuicksort{
+	padding:0.5% 0.5% 0.5% 0.5%;
+}*/
+
+.array_size_style{
+	position: relative;
+	border-radius:5px;  
+ 	-webkit-border-radius:5px; 
+ 	-moz-border-radius:5px; 
+ 	-webkit-box-shadow:0 0 10px 0 #666 inset; 
+ 	-moz-box-shadow:0 0 5px 0 #666 inset; 
+ 	box-shadow:0 0 5px 0 #666 inset;
+ 	text-align:center; 
+ 	height:5%; 
+ 	line-height:25%; 
+ 	width:10%; 
+ 	text-indent:0px;
+ 	background-color: #F8F8F8;
+
+ 	[contentEditable=true]:empty:not(:focus):before{
+        content:attr(data-ph)
+}
+
