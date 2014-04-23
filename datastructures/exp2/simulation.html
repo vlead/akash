@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Expression Evaluation using Stack</title>
+        <link rel = 'stylesheet' type = 'text/css' href = 'simulation/default.css' />
+        <link href = 'http://fonts.googleapis.com/css?family=Inconsolata' rel = 'stylesheet' type = 'text/css' > 
+        <script type = 'text/javascript' src = 'simulation/experiment2.js' ></script>
+    </head>
+
+    <body>
+    	<div id='header'>Expression Evaluation using Stack</div>
+        <div class='vlabsIcon'></div>
+    	
+    	<div id='mainBody'>
+    		<div class='inputDivision'>
+                
+                <!--<div class = "inputDivisionTitle" >Calculator</div> -->
+
+    			<div id="calculator">
+                <!-- Screen and clear key -->
+                    <div class="top">
+                        <div class="screen" id="screenId">**Press C to start**</div>
+                    </div>
+
+                    <div class="keys">
+                    <!-- operators and other keys -->
+                        <div class='calcRow'>
+                        <button id="keyOpenBrcktId" value='('>(</button>
+                        <button id="keyCloseBrcktId" value=')'>)</button>
+                        <button class="backspace" id="keyBackspaceId">Backspace</button>
+                        <button class="clear" id="keyClearId">C</button>
+                        </div>
+                        <div class='calcRow'> 
+                        <button id="keySevenId" value='7'>7</button>
+                        <button id="keyEightId" value='8'>8</button>
+                        <button id="keyNineId" value='9'>9</button>
+                        <button class="operator" id="keyDivId" value='/'>/</button>
+                        <button class="operator" id="keyExpId" value='^'>^</button>
+                        </div>
+                        <div class='calcRow'>
+                        <button id="keyFourId" value='4'>4</button>
+                        <button id="keyFiveId" value='5'>5</button>
+                        <button id="keySixId" value='6'>6</button>
+                        <button class="operator" id="keyMulId" value='*'>*</button>
+                        <button class="operator" id="keyModId" value='%'>%</button>
+                        </div>
+                        <div class='calcRow'>
+                        <button id="keyOneId" value='1'>1</button>
+                        <button id="keyTwoId" value='2'>2</button>
+                        <button id="keyThreeId" value='3'>3</button>
+                        <button class="operator" id="keySubId" value='-'>-</button>
+                        <button class="operator" id="keyOneByXId">1/x</button>
+                        </div>
+                        <div class='calcRow'>
+                        <button id="keyZeroId" value='0'>0</button>
+                        <button id="keyUnaryOpId">+/-</button>
+                        <button id="keyDotId" value='.'>.</button>
+                        <button class="operator" id="keyAddId" value='+'>+</button>
+                        <button class="eval" id="keyEqualToId">=</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class='executionDivision'>
+            	
+            	<!-- <div class="executionDivisionTitle">Steps in Evaluation</div> -->
+            	<div class='expression' id='secondHalfId'>
+            		<span class="expr" id="exprTextId"></span><br>
+                    <p class='evalExpr' id='evalExprId'></p>
+                    <span class='exprEval' id='exprEvalId'></span>
+	            </div>
+
+	            <div id="table">
+                <div class="tr" id="row10">
+                    <span class="td"></span>
+                </div>
+                <div class="tr" id="row9">
+                    <span class="td"></span>
+                </div>
+                <div class="tr" id="row8">
+                    <span class="td"></span>
+                </div>
+                <div class="tr" id="row7">
+                    <span class="td"></span>
+                </div>
+                <div class="tr" id="row6">
+                    <span class="td"></span>
+                </div>
+                <div class="tr" id="row5">
+                    <span class="td"></span>
+                </div>
+                <div class="tr" id="row4">
+                    <span class="td"></span>
+                </div>
+                <div class="tr" id="row3">
+                    <span class="td"></span>
+                </div>
+                <div class="tr" id="row2">
+                    <span class="td"></span>
+                </div>
+                <div class="tr" id="row1">
+                    <span class="td"></span>
+                </div>
+                </div>
+
+                <div class="nextNprev">
+                    <img src="rewind.png" id="rewindBtn" alt="prev"></img>
+                    <img src="pause.png" id="pauseBtn" alt="pause"></img>
+                    <img src="play.png" id="playBtn" alt="play"></img>
+                </div>
+            </div>
+
+            <div class='outputDivision'>
+            	<span id='execMsgId'></span>
+            	<span id='outputMsgId'></span>
+        	</div>
+        </div>
+    </body>    
+</html>
