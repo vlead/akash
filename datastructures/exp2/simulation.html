@@ -2,119 +2,130 @@
 <html>
     <head>
         <title>Expression Evaluation using Stack</title>
-        <link rel = 'stylesheet' type = 'text/css' href = 'simulation/default.css' />
+        
+        <!-- Bootstrap -->  
+        <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" media="screen"> 
         <link href = 'http://fonts.googleapis.com/css?family=Inconsolata' rel = 'stylesheet' type = 'text/css' > 
+        <link rel="stylesheet" type="text/css" href="../style.css">
+        <link rel="stylesheet" type="text/css" href="../bstyle.css">
+        <link rel = 'stylesheet' type = 'text/css' href = 'simulation/default.css' />
         <script type = 'text/javascript' src = 'simulation/experiment2.js' ></script>
+
+        <style type="text/css">
+        body{
+          background-color: #f4f4f4;
+        }
+      </style>
     </head>
 
     <body>
-    	<div id='header'>Expression Evaluation using Stack</div>
-        <div class='vlabsIcon'></div>
-    	
-    	<div id='mainBody'>
-    		<div class='inputDivision'>
-                
-                <!--<div class = "inputDivisionTitle" >Calculator</div> -->
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="http://code.jquery.com/jquery.js"></script>
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="../bootstrap-3.1.1-dist/js/bootstrap.min.js"></script>
 
-    			<div id="calculator">
-                <!-- Screen and clear key -->
-                    <div class="top">
-                        <div class="screen" id="screenId">**Press C to start**</div>
-                    </div>
-
-                    <div class="keys">
-                    <!-- operators and other keys -->
-                        <div class='calcRow'>
-                        <button id="keyOpenBrcktId" value='('>(</button>
-                        <button id="keyCloseBrcktId" value=')'>)</button>
-                        <button class="backspace" id="keyBackspaceId">Backspace</button>
-                        <button class="clear" id="keyClearId">C</button>
-                        </div>
-                        <div class='calcRow'> 
-                        <button id="keySevenId" value='7'>7</button>
-                        <button id="keyEightId" value='8'>8</button>
-                        <button id="keyNineId" value='9'>9</button>
-                        <button class="operator" id="keyDivId" value='/'>/</button>
-                        <button class="operator" id="keyExpId" value='^'>^</button>
-                        </div>
-                        <div class='calcRow'>
-                        <button id="keyFourId" value='4'>4</button>
-                        <button id="keyFiveId" value='5'>5</button>
-                        <button id="keySixId" value='6'>6</button>
-                        <button class="operator" id="keyMulId" value='*'>*</button>
-                        <button class="operator" id="keyModId" value='%'>%</button>
-                        </div>
-                        <div class='calcRow'>
-                        <button id="keyOneId" value='1'>1</button>
-                        <button id="keyTwoId" value='2'>2</button>
-                        <button id="keyThreeId" value='3'>3</button>
-                        <button class="operator" id="keySubId" value='-'>-</button>
-                        <button class="operator" id="keyOneByXId">1/x</button>
-                        </div>
-                        <div class='calcRow'>
-                        <button id="keyZeroId" value='0'>0</button>
-                        <button id="keyUnaryOpId">+/-</button>
-                        <button id="keyDotId" value='.'>.</button>
-                        <button class="operator" id="keyAddId" value='+'>+</button>
-                        <button class="eval" id="keyEqualToId">=</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class='executionDivision'>
-            	
-            	<!-- <div class="executionDivisionTitle">Steps in Evaluation</div> -->
-            	<div class='expression' id='secondHalfId'>
-            		<span class="expr" id="exprTextId"></span><br>
-                    <p class='evalExpr' id='evalExprId'></p>
-                    <span class='exprEval' id='exprEvalId'></span>
-	            </div>
-
-	            <div id="table">
-                <div class="tr" id="row10">
-                    <span class="td"></span>
-                </div>
-                <div class="tr" id="row9">
-                    <span class="td"></span>
-                </div>
-                <div class="tr" id="row8">
-                    <span class="td"></span>
-                </div>
-                <div class="tr" id="row7">
-                    <span class="td"></span>
-                </div>
-                <div class="tr" id="row6">
-                    <span class="td"></span>
-                </div>
-                <div class="tr" id="row5">
-                    <span class="td"></span>
-                </div>
-                <div class="tr" id="row4">
-                    <span class="td"></span>
-                </div>
-                <div class="tr" id="row3">
-                    <span class="td"></span>
-                </div>
-                <div class="tr" id="row2">
-                    <span class="td"></span>
-                </div>
-                <div class="tr" id="row1">
-                    <span class="td"></span>
-                </div>
-                </div>
-
-                <div class="nextNprev">
-                    <img src="rewind.png" id="rewindBtn" alt="prev"></img>
-                    <img src="pause.png" id="pauseBtn" alt="pause"></img>
-                    <img src="play.png" id="playBtn" alt="play"></img>
-                </div>
-            </div>
-
-            <div class='outputDivision'>
-            	<span id='execMsgId'></span>
-            	<span id='outputMsgId'></span>
-        	</div>
+      <nav class="navbar navbar-default visible-lg" role="navigation">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <a class="navbar-brand" href="#">Expression Evaluation Using Stack</a>
         </div>
-    </body>    
-</html>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse navbar-ex1-collapse desk-nav">
+          <ul class="nav navbar-nav">
+            <li style="border-right: 1.5px solid white;"><a href="index.html">Lab Manual</a></li>
+            <li style="border-right: 1.5px solid white;"><a href="simulation.html">Simulation</a></li>
+            <li><a href="quiz.html">Quiz</a></li>
+          </ul>
+          <a href="../index.html"><span class="glyphicon glyphicon-home pull-right"></span></a>
+        </div><!-- /.navbar-collapse -->
+      </nav>
+
+  <div class="hidden-lg">
+    <nav class="navbar navbar-default mobile-nav" role="navigation">
+    <div class="nav navbar-nav pull-right">
+    <a href="index.html"><span class="glyphicon glyphicon-list-alt"></span></a><a href="simulation.html"><span class="glyphicon glyphicon-play-circle"></span></a><a href="quiz.html"><span class="glyphicon glyphicon-tower"></span></a><a href="../index.html"><span class="glyphicon glyphicon-home"></span></a>
+    </div>
+    </nav>
+    <p class="experiment-mobile-title"> Expression Evaluation Using Stack</p>
+  </div>
+ 
+  <div class="row">
+    <div class="calculator col-sm-4">
+      <div class="top">
+        <div class="screen" id="screenId">**Press C to start**</div>
+      </div> 
+      <div class="btn-group">
+        <button type="button" class="btn btn-default" id="keyOpenBrcktId" value="(">(</button>
+        <button type="button" class="btn btn-default" id="keyCloseBrcktId" value=")"> ) </button>
+        <button type="button" class="btn btn-default btn" id="keyBackspaceId">Backspace</button>
+        <button type="button" class="operator btn btn-default" id="keyClearId">C&nbsp;</button>
+      </div>
+      <div class="btn-group">
+        <button type="button" class="btn btn-default" id="keySevenId" value="7">&nbsp;7</button>
+        <button type="button" class="btn btn-default" id="keyEightId" value="8">&nbsp;8</button>
+        <button type="button" class="btn btn-default" id="keyNineId" value="9">&nbsp;9</button>
+        <button type="button" class="operator btn btn-default" id="keyDivId" value="/">&nbsp;/&nbsp;</button>
+        <button type="button" class="operator btn btn-default" id="keyExpId" value="^">&nbsp;^&nbsp;&nbsp;</button>
+      </div>
+      <div class="btn-group">
+        <button type="button" class="btn btn-default" id="keyFourId" value="4">&nbsp;4</button>
+        <button type="button" class="btn btn-default" id="keyFiveId" value="5">&nbsp;5</button>
+        <button type="button" class="btn btn-default" id="keySixId" value="6">&nbsp;6</button>
+        <button type="button" class="operator btn btn-default" id="keyMulId" value="*">&nbsp;*&nbsp;</button>
+        <button type="button" class="operator btn btn-default" id="keyModId" value="%">%&nbsp;</button>
+      </div>
+      <div class="btn-group">
+        <button type="button" class="btn btn-default" id="keyOneId" value="1">&nbsp;1</button>
+        <button type="button" class="btn btn-default" id="keyTwoId" value="2">&nbsp;2</button>
+        <button type="button" class="btn btn-default" id="keyThreeId" value="3">&nbsp;3</button>
+        <button type="button" class="operator btn btn-default" id="keySubId" value="-">&nbsp;-&nbsp;</button>
+        <button type="button" class="operator btn btn-default" id="keyOneByXId" value="1/x">1/x</button>
+      </div>
+      <div class="btn-group">
+        <button type="button" class="btn btn-default" id="keyZeroId" value="0">&nbsp;0</button>
+        <button type="button" class="btn btn-default" id="keyUnaryOpId">+/-</button>
+        <button type="button" class="btn btn-default" id="keyDotId" value=".">&nbsp;.</button>
+        <button type="button" class="operator btn btn-default" id="keyAddId" value="+">&nbsp;+</utton>
+        <button type="button" class="operator btn btn-default" id="keyEqualToId" value="=">&nbsp;=&nbsp;</button>
+      </div>
+    </div>
+    
+    <div class="col-sm-2">
+      <div class='expression' id='secondHalfId'>
+        <span class="expr" id="exprTextId"></span><br>
+        <p class='evalExpr' id='evalExprId'></p>
+        <span class='exprEval' id='exprEvalId'></span>
+      </div>
+    </div>  
+    <div class="col-sm-1">
+      <ul class="stack list-group">
+        <li class="stackRow list-group-item" id="row10"></li>
+        <li class="stackRow list-group-item" id="row9"></li>
+        <li class="stackRow list-group-item" id="row8"></li>
+        <li class="stackRow list-group-item" id="row7"></li>
+        <li class="stackRow list-group-item" id="row6"></li>
+        <li class="stackRow list-group-item" id="row5"></li>
+        <li class="stackRow list-group-item" id="row4"></li>
+        <li class="stackRow list-group-item" id="row3"></li>
+        <li class="stackRow list-group-item" id="row2"></li>
+        <li class="stackRow list-group-item" id="row1"></li>
+      </ul>
+      <div class="nextNprev">
+        <img src="rewind.png" id="rewindBtn" alt="prev"></img>
+        <img src="pause.png" id="pauseBtn" alt="pause"></img>
+       <!-- <img src="play.png" id="playBtn" alt="play"></img> -->
+      </div>  
+    </div> 
+    <div class="col-sm-2">
+      <span id='execMsgId'></span>
+      <span id='outputMsgId'></span>
+    </div>  
+    </div>    
+  
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) 
+    <script src="http://code.jquery.com/jquery.js"></script> -->
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+   <!-- <script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script> -->
+  </body>    
+</html> 

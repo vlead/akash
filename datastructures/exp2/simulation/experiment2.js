@@ -150,7 +150,11 @@ window.model = {
     },
 }
 
+
+
 window.view = {
+
+    pauseClicked: false,
 
     addClickEvent: function (id, method) {
         var element = document.getElementById(id);
@@ -158,9 +162,11 @@ window.view = {
     },
 
     activateEvents: function () {
-        var events = new Array("keyOpenBrcktId", "keyCloseBrcktId", 'keySevenId', 'keyEightId', 'keyNineId', 'keyDivId', 'keyExpId', 'keyFourId', 'keyFiveId', 'keySixId', 'keyMulId', 'keyModId', 'keyOneId', 'keyTwoId', 'keyThreeId', 'keySubId', 'keyZeroId', 'keyDotId', 'keyAddId', 'playBtn', 'pauseBtn', 'rewindBtn');
+
+        var events = new Array("keyOpenBrcktId", "keyCloseBrcktId", 'keySevenId', 'keyEightId', 'keyNineId', 'keyDivId', 'keyExpId', 'keyFourId', 'keyFiveId', 'keySixId', 'keyMulId', 'keyModId', 'keyOneId', 'keyTwoId', 'keyThreeId', 'keySubId', 'keyZeroId', 'keyDotId', 'keyAddId');
         for (var i=0; i < events.length; i = i+1) {
             this.addClickEvent(events[i], function() { view.setInnerHTML('screenId', this.value) });
+            console.log(events[i].value);
         }
         this.addClickEvent('keyOneByXId', function() {view.setInnerHTMLOneByX('screenId') });
         this.addClickEvent('keyUnaryOpId', function() {view.setInnerHTMLUnary('screenId') });
@@ -168,7 +174,7 @@ window.view = {
         this.addClickEvent('keyClearId', function() {view.clearScreen('screenId') });
         this.addClickEvent('keyBackspaceId', function() {view.setInnerHTMLBackspace('screenId') });
         this.addClickEvent('pauseBtn', function() {view.pauseSimulation() });
-        this.addClickEvent('playBtn', function() {view.resumeSimulation() });
+        //this.addClickEvent('playBtn', function() {view.resumeSimulation() });
         this.addClickEvent('rewindBtn', function() {view.prevSimulation() });
     },
 
@@ -184,18 +190,30 @@ window.view = {
         document.getElementById(id).innerHTML = '-(' + this.getInnerHTML(id) + ')';
     },
 
-    pauseSimulation: function() {
-        simulator.stop();
-        document.getElementById('screenId').innerHTML = finalValue;
-        isDelay = false;
+    pauseSimulation: function() { 
+        if(this.pauseClicked == false ) {
+            document.getElementById('pauseBtn').src = "play.png";
+            simulator.stop();
+            document.getElementById('screenId').innerHTML = finalValue;
+            isDelay = false;
+            this.pauseClicked=true;
+        }
+        else {
+            isDelay = true;
+            prevClicked = false;
+            simulator.delay(2500);
+            document.getElementById('screenId').innerHTML = finalValue;
+            document.getElementById('pauseBtn').src = "pause.png";
+            this.pauseClicked = false;
+        }
     },
 
-    resumeSimulation: function() {
+    /*resumeSimulation: function() {
         isDelay = true;
         prevClicked = false;
         simulator.delay(2500);
         document.getElementById('screenId').innerHTML = finalValue;
-    },
+    },*/
     
     prevSimulation: function() {
         prevClicked = true;
@@ -213,6 +231,7 @@ window.view = {
         try {
             model.expr = this.getInnerHTML(id);
             finalExpr = this.getInnerHTML(id);
+            console.log(finalExpr);
             finalValue = model.evalExpr();
             view.setInnerHTML('exprTextId', finalExpr + '  =  ' + finalValue);
             document.getElementById(id).innerHTML = finalValue;
