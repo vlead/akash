@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Polynomials via Linked Lists</title>
+  <link rel="stylesheet" type="text/css" href="../../normalize.css">
+  <!-- Bootstrap -->  
+  <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" media="screen">   
+    
+  <link href='http://fonts.googleapis.com/css?family=Actor' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro' rel='stylesheet' type='text/css'> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="../style.css">
+  <link rel="stylesheet" type="text/css" href="../bstyle.css">
+  <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="../../assets/js/html5shiv.js"></script>
+      <script src="../../assets/js/respond.min.js"></script>
+      <![endif]-->
+      <style type="text/css">
+        body{
+          background-color: #f4f4f4;
+        }
+      </style>  
+</head>
+  <body>
+  
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="../bootstrap-3.1.1-dist/js/bootstrap.min.js"></script>
+
+      <nav class="navbar navbar-default visible-lg" role="navigation">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+          <a class="navbar-brand" href="#">Polynomials via Linked Lists</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse navbar-ex1-collapse desk-nav">
+          <ul class="nav navbar-nav">
+            <li style="border-right: 1.5px solid white;"><a href="index.html">Lab Manual</a></li>
+            <li style="border-right: 1.5px solid white;"><a href="simulation.html">Simulation</a></li>
+            <li><a href="quiz.html">Quiz</a></li>
+          </ul>
+          <a href="../index.html"><span class="glyphicon glyphicon-home pull-right"></span></a>
+        </div><!-- /.navbar-collapse -->
+      </nav>
+
+      <div class="hidden-lg">
+      <nav class="navbar navbar-default mobile-nav" role="navigation">
+      <div class="nav navbar-nav pull-right">
+    <a href="index.html"><span class="glyphicon glyphicon-list-alt"></span></a><a href="simulation.html"><span class="glyphicon glyphicon-play-circle"></span></a><a href="quiz.html"><span class="glyphicon glyphicon-tower"></span></a><a href="../index.html"><span class="glyphicon glyphicon-home"></span></a>
+  </div>
+    </nav>
+    <p class="experiment-mobile-title"> Polynomials via Linked Lists</p>
+    </div>
+
+<div class="row">
+  <div class="col-lg-2 visible-lg lab-index">
+    <ul class="nav nav-pills nav-stacked">
+      <li class="active"><a href="#intro">Introduction</a></li>
+      <li><a href="#theory">Theory</a></li>
+      <li><a href="#obj">Objective</a></li>
+      <li><a href="#man">Manual</a></li>
+      <li><a href="#proc">Procedure</a></li>
+      <li><a href="#further-reading">Further Reading</a></li>
+    </ul>
+  </div>
+
+  <div class="col-lg-10 lab-manual">
+    <div id="intro" class="manual-section">
+      <p class="manual-section-title">Introduction</p><hr />
+      <div class="manual-section-description">
+        <p> 
+          This experiment guides you using Linked lists in a practical example. This is useful if you want to understand linked lists or if you want to see a realistic, applied example of pointer-intensive code. In this experiment, you will essentially use linked lists to add and multiply (sparse) polynomials. 
+        </p> 
+    </div></div>
+
+    <div id="theory" class="manual-section">
+      <p class="manual-section-title">Theory</p><hr />
+      <div class="manual-section-description">
+        <p>
+          <big>The Array Data Structure</big>
+          <br>
+          In this framework, we now see the array as a data structure. The typical operations on this data structure are as follows:
+          <ul>
+            <li> to create an array data structure, called create(name, size)</li>
+            <li> to access the element at a given index i, called ElementAt(index, name)</li>
+            <li> to find the size of the array, called size(name)</li>
+            <li> to print the contents of the array, called print(name)</li>
+          </ul>
+        </p>
+        <p>
+          While we are used to writing A[i] to access element i of an array A, it can be seen as the way to access the ith element in a non-object oriented programming language. The other operations are also not explicity specified when one uses languages such as C. But, when one considers purely object oriented languages, such operations are required to be supported. Similarly, in C, array creation is done by malloc() or a compile time declaration as int A[10];. However, when one looks at a data structure in terms of its operations, a create() operation is required.
+        </p>
+        <p>
+          <big>The Linked List Data Structure</big>
+          <br>
+          Linked lists are useful to study for two reasons. Most obviously, linked lists are a data structure which you may want to use in real programs. Seeing the strengths and weaknesses of linked lists will give you an appreciation of the some of the time, space, and code issues which are useful to thinking about any data structures in general.Somewhat less obviously, linked lists are great way to learn about pointers. In fact, you may never use a linked list in a real program, but you are certain to use lots of pointers. Linked list problems are a nice combination of algorithms and pointer manipulation. Traditionally, linked lists have been the domain where beginning programmers get the practice to really understand pointers.  
+        </p>
+        <p>
+          <big>Application of linked lists is to polynomials</big>
+          We now use linked lists to perform operations on polynomials. Let f(x) = Σdi=0 aixi. The quantity d is called as the degree of the polynomial, with the assumption that ad not equal to 0. A polynomial of degree d may however have missing terms i.e., powers j such that 0 <= j < d and aj = 0.The standard operations on a polynomial are addition and multiplication. If we store the coefficient ofeach term of the polynomials in an array of size d + 1, then these operations can be supported in a straightforwardway. However, for sparse polynomails, i.e., polynomials where there are few non-zero coefficients,this is not efficient. One possible solution is to use linked lists to store degree, coefficient pairs for non-zero coefficients.With this representation, it makes it easier if we keep the list of such pairs in decreasing order of degrees. 
+          <pre class="prettyprint lang-c" >
+            if(<i>test expression</i>)
+            {
+                    block1;
+            }
+          </pre>
+        </p>
+        <p>
+          Here, if the <i>test expression</i> is true, then statements in <i>block1</i> are executed. If the <i>test expression</i> is false then statements in <i>block1</i> are completly ignored.
+          <p>
+            <big>If-Else construct</big><br>
+            This construct is used to execute one out of two blocks of statements based on the truthvalue of a conditon. The syntax of an If-else statement is as follows:
+           </p> 
+          <pre class="prettyprint">
+            if(<i>test expression</i>)
+            {
+                    block1;
+            }
+            else
+            {
+                    block2;
+            }
+          </pre>
+        </p>
+        <p>
+          Here, if the <i>test expression</i> is true, then statements in <i>block1</i> are executed. If the <i>test expression</i> is false then statements in <i>block2</i> are executed.<br><br>
+          <big> Nesting example</big><br>
+          If and If-else statements can be nested to create more complex control flows:
+          <pre class="prettyprint">
+            if(<i>test expression1</i>){ 
+                    statements1; 
+                    if(<i>test expression2</i>){ 
+                            statements2; 
+                    } 
+            } 
+            else{ 
+                    statements3; 
+                    if(<i>test expression3</i>){ 
+                            statements4; 
+                    } 
+                    else{ 
+                            statements5; 
+                    } 
+            } 
+          </pre>
+        </p>
+        <p>
+          Here if the <i>test expression1</i> is true then <i>statements1</i> are executed followed by the evaluation of <i>test expression2</i>. If <i>test expression2</i> is true, <i>statements2</i> are executed; if it is false, then <i>statements2</i> are completly ignored.<br>
+           If <i>test expression1</i> is false, then <i>statements3</i> are executed followed by evalution of <i>test expression3</i>. If <i>test expression3</i> is true <i>statements4</i> are executed. If <i>test expression3</i> is false then <i>statements5</i> are executed.
+          <br><br>
+          <big>If-Else ladder</big>
+          <br>
+          When a series mutually exclusive conditions(for example, deciding grade based on marks) have to be checked, then we may use the If-else ladder construct. This construct is essentially created by repeatedly nesting an if-else construct inside the else part of an If-else construct. The conditions are evaluated from top to bottom and whenever a condition is true, then the statements corresponding to the true part of the condition are executed and we exit out of the construct. The final else part is executed only if all the conditions get evaluated to false. It takes the following general form:
+          <br>
+          <pre class="prettyprint">
+            if (<i>test expression1</i>) 
+               statements1; 
+            else if (<i>test expression2</i>) 
+               statements2; 
+            else if (<i>test expression3</i>) 
+               statements3; 
+            else if (<i>test expression4</i>) 
+               statements4; 
+            else 
+               statements5; 
+          </pre>
+        </p>
+        <p>
+          Here, the <i>test expression1</i> is evaluated first and if it is true then the <i>statements1</i> are executed and we exit out of the construct. If <i>test expression1</i> is false, then <i>test expression2</i> is evaluated. If <i>test expression2</i> is true then <i>statements2</i> are executed and we exit out of the construct.  If <i>test expression2</i> is false, then <i>test expression3</i> is evaluated. If <i>test expression3</i> is true then <i>statements3</i> are executed and we exit out of the construct.  If <i>test expression3</i> is false, then <i>test expression4</i> is evaluated. If <i>test expression4</i> is true then <i>statements4</i> are executed and we exit out of the construct.  If <i>test expression4</i> is false, then <i>statements4</i> are executed.
+        </p>
+        <p>
+          <big>Switch-Case constructs</big><br>
+          A Switch-Case is a construct which is used to allow jumping to one of the multiple blocks. This decision is taken based on the value of a variable or an expression. Its purpose is to allow the value of a variable or an expression to control the flow of program execution via a multiway branch. A default case may also be specified to be executed when the given state has not been addressed by any of the other cases. 
+          <br>
+          <pre class="prettyprint">
+            switch ( <i>test expression</i> ) { 
+              case 1 :  
+                statement1;  
+              break;   
+              case 2 :  
+                statement2;  
+              break;  
+              case n :  //an example general case
+                statementn;  
+              break;   
+              default : 
+                statements_default; 
+            } 
+          </pre>
+        </p>
+        <p>
+          Here, if <i>test expression</i> evaluates to 1, then <i>statements1</i> are evaluated. And then due to <i>break</i>, we exit the construct. 
+          If <i>test expression</i> evaluates to 2, then <i>statements1</i> are evaluated. And then due to <i>break</i>, we exit the construct. 
+          Similarly, if <i>test expression</i> evaluates to some value n for which a case has been written under <i>case n:</i>, then <i>statementsn</i> are evaluated. And then due to <i>break</i>, we exit the construct.
+          If <i>test expression</i> evalutes to a value for which a case has not been listed, then <i>statements_default</i> are executed. 
+        </p>
+        <p>
+          <b><i>Important: </i></b><br>
+          1. Take special note of the difference between the relational operator "equal to" which is denoted by "==", and the assignement operator which is denoted by "=".  Misuse of "=" in the place of "==" won't be reported by the compiler. <br>
+          For example:<br>
+          Writing,
+          <pre class= "prettyprint">
+            if(x=3){
+            statements1;
+            }
+          </pre>
+        </p>
+        <p>
+          instead of
+        </p>
+        <p>
+          <pre class="prettyprint">
+            if(x==3){
+            statements1;
+            }
+          </pre>
+        </p>
+        <p>
+          will result into the test expression for the if construct to always be true and hence, <i>statements1</i> are always executed.
+          <br>
+          2. Typically, the last statement for each case is a break statement. This causes program execution to jump to the statement following the closing bracket of the switch statement, which is what one would normally want to happen. However if the break statement is omitted, program execution continues with the first line of the next case, if any. This is called a fall-through.<br>
+        </p>
+      </div>
+    </div>
+    <div id="obj" class="manual-section">
+      <p class="manual-section-title">Objective</p><hr />
+      <div class="manual-section-description">
+        <p>
+          1. To learn how decision making is done while programming. 
+          <br>
+          2. To learn about the various simple constructs used for control flow. 
+          <br>
+        </p> 
+      </div>
+    </div>
+
+    <div id="man" class="manual-section">
+      <p class="manual-section-title">Manual</p><hr />
+      <div class="manual-section-description">
+        <p> 
+          Here you will do two experiments. First will be on finding whether a point is inside or outside rectangle. Secondly you will see a program for selecting a day in the week using switch construct. 
+        </p> 
+      </div>
+    </div>
+
+    <div id="proc" class="manual-section">
+      <p class="manual-section-title">Procedure</p><hr />
+      <div class="manual-section-description">
+        <p>
+          <ol>
+            <b> Experiment Part I: Position of Point w.r.t to a Rectangle</b><br>
+            <i> Here we shall see how the problem of determining whether a given point is inside or outside a rectangle can be solved using various conditional constructs.
+            </i><br>            
+            1. Initialize the values of the variables on the top left. X and Y denote the x and y coordinate of the input point.<br>
+            2. Select the code prototype with which you would like to solve the problem.<br>
+            3. Click start to begin the expriment.<br>
+            4. Click Next to get a step by step execution of the code along with the reasoning which is displayed on the right hand side panel. <br>
+            <b>Experiment Part II: Selecting the Day of a week</b><br>
+            <i> Here we shall see how a switching construct works by associating one number to each of the days.</i><br>
+            1. First, select a day from the top left by clicking on the correspoding radio button or enter any number in the textbox directly. Then, click on SUBMIT.<br>
+            2. Select the code prototype with which you would like to solve the problem.<br>
+            3. Click on the activated START button to begin the experiment.<br>
+            4. Click Next to get a step by step execution of the code. The changes in local variables can be visualized on the bottom left of the screen. The OUTPUT can be visualized on the right part of the screen. <br>
+          </ol>   
+        </p>            
+      </div>
+    </div>
+
+    <div id="further-reading" class="manual-section">
+      <p class="manual-section-title">Further Reading</p><hr />
+      <div class="manual-section-description">
+        <ol>
+          <li><a class="more" target="_blank" href="http://en.wikibooks.org/wiki/C_Programming/Control">http://en.wikibooks.org/wiki/C_Programming/Control</a></li>
+          <li><a class="more" target="_blank" href="http://en.wikipedia.org/wiki/Control_flow">http://en.wikipedia.org/wiki/Control_flow</a></li>
+          <li><a class="more" target="_blank" href="http://www.exforsys.com/tutorials/c-language/decision-making-and-branching-in-c.html">http://www.exforsys.com/tutorials/c-language/decision-making-and-branching-in-c.html</a></li>
+          <li><b>Section 3.1-3.4, The C Programming Language, Kernighan and Ritchie</b></li>
+          <li><b>Section 6.1-6.2, Practical C Programming, Steve Qualline</b></li>
+        </ol>        
+      </div>
+    </div>
+  </div></div>
+  <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+  <script src="http://code.jquery.com/jquery.js"></script>
+  <!-- Include all compiled plugins (below), or include individual files as needed -->
+  <script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+</body>
+</html>
