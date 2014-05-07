@@ -3,7 +3,24 @@ body{
 	text-align: center ;
 	}
 
-.test_style{
+input{ 
+ 	border:2px black;
+ 	border-radius:5px;  
+ 	-webkit-border-radius:5px; 
+ 	-moz-border-radius:5px; 
+ 	-webkit-box-shadow:0 0 10px 0 #666 inset; 
+ 	-moz-box-shadow:0 0 5px 0 #666 inset; 
+ 	box-shadow:0 0 5px 0 #666 inset; 
+ 	height:5%; 
+ 	font-size: 20px;
+ 	line-height:25px; 
+ 	width:6%; 
+ 	text-indent:5px; 
+ 	font-family: Times New Roman;
+} 
+input:focus { outline:none; }
+
+/*input{
 	-webkit-user-modify: read-write;
 	position: relative;
 	height: 4%;
@@ -18,13 +35,13 @@ body{
 }
 
 
-input.test_style:focus { outline:none; }
-
+input:focus { outline:none; }
+*/
 
 .textfield{
 	position:relative;
-	height: 20%;
-	width: 98%;
+height: 10%;
+width: 100%;
 
 }
 
@@ -46,7 +63,14 @@ input.test_style:focus { outline:none; }
 	width: 98%;	*/
 }
 
-/*input{ 
+div{
+	margin:0.5%;
+}
+
+.buttonPosition{
+	margin:0.5%;
+}
+{ 
  	border:none;
  	border-radius:5px;  
  	-webkit-border-radius:5px; 
@@ -60,6 +84,10 @@ input.test_style:focus { outline:none; }
  	width:5%; 
  	text-indent:0px; 
 } 
+
+.sizeInput{
+	margin:0.5%;
+}
 
 .quicksortbutton{
 	padding: 10%
@@ -88,3 +116,19 @@ input.test_style:focus { outline:none; }
         content:attr(data-ph)
 }
 
+.externalDivStyle{
+	width:40%;
+	height:7%;
+	/*background-color: #D93600;*/
+	background-color: "#FFFF66";
+}
+div.outputDivisionStyle{
+	top:50%;
+	left:50%;
+	position:relative;
+	background-color: #F8F8F8;
+}
+
+.yellowClass{
+    background-color: yellow;
+}
