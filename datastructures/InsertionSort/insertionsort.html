@@ -1,0 +1,37 @@
+<DOCTYPE html>
+<html>
+<head><link rel="stylesheet" type="text/css" href="insertionsort.css" >
+<script src="jquery.js"></script>
+<link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css" >
+</head>
+<body>
+
+<div id="outerdiv">
+ <div id="maindiv">
+  <h3>INSERTION SORT</h3>
+  <div id="btn">
+   <div class="bootbtn"><button type="button" class="btn btn-success" id="best">Best Case</button></div>
+   <div class="bootbtn"><button type="button" class="btn btn-warning" id="worst">Worst Case</button></div>
+   <div class="bootbtn"><button type="button" class="btn btn-info" id="random">Random Input</button></div>
+  </div>
+    
+  <div id="size">
+   <form class="navbar-form navbar-left" id="myform" role="search" onsubmit="event.preventDefault(); inputboxes();return false;">
+   <label>Array Size</label>
+   <input type="number" min="0" max="10" step="1" placeholder="" id="arraysize" class="form-control"><input type="submit" id="sbt" value="OK"></form>
+  </div>
+  
+  <div id='getboxes'></div>
+ 
+  <div id='sortdiv'>
+	  <!--button type="button" class="btn btn-primary" id="start">Start</button-->
+	  <button type="button" class="btn btn-primary" id="sort">Sort
+  </div>
+  
+  <div id='result'></div>
+   <!--div id='sorted'></div-->
+ </div>
+</div>
+</body>
+<script src="insertionsort.js"></script>
+</html>
