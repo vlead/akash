@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<title>Roman Number System</title>
+		<link rel = 'stylesheet' type = 'text/css' href = 'default.css'/>
+	</head>
+	<body>
+		<div id = 'inputScreen'>
+			<div class = 'inputFirst'>
+			<input type = 'text' id = 'firstInput'>
+			<p>Enter the first Roman value!</p>
+			</div>
+			<div class = 'inputSecond'>
+				<input type = 'text' id = 'secondInput'>
+				<p>Enter the second Roman value!</p>
+			</div>
+			<button class = 'buttonAdd'>ADDITION</button>
+			<button class = 'buttonMul'>MULTIPLY</button>
+		</div>
+		<div class = 'showFirstRoman hide'>First Roman Number: </div>
+		<div class = 'showSecondRoman hide'>Second Roman Number: </div>
+		<div class = 'steps hide'></div>
+		<table class = 'substitutionTable hide'>
+			<thead>
+				<tr>
+					<th>Instead of</th>
+					<th>Write</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>IV</td>
+					<td>IIII</td>
+				</tr>
+				<tr>
+					<td>IX</td>
+					<td>VIIII</td>
+				</tr>
+				<tr>
+					<td>XL</td>
+					<td>XXXX</td>
+				</tr>
+				<tr>
+					<td>XC</td>
+					<td>LXXXX</td>
+				</tr>
+				<tr>
+					<td>CD</td>
+					<td>CCCC</td>
+				</tr>
+				<tr>
+					<td>CM</td>
+					<td>DCCCC</td>
+				</tr>
+			</tbody>	
+		</table>
+		<div class = 'firstInput hide'></div>
+		<div class = 'secondInput hide'></div>
+		<div class = 'result hide' id = 'res'></div>
+		<div class = 'found hide'>Found
+			<p id = 'found'></p>
+		</div>
+		<div class = 'replacement hide'>Replace with
+			<p id = 'replacement'></p>
+		</div>
+		<div class = 'substitutedValue1 hide'>First Substituted Value : </div>
+		<div class = 'substitutedValue2 hide'>Second Substituted Value : </div>
+		<div class = 'unGroupedValue hide'>Original Value: </div>
+	</body>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	<script type = 'text/javascript' src = 'jquery.js'></script>
+	<script type = 'text/javascript' src = 'script.js'></script>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<title>Unary Number System</title>
+		<link rel = 'stylesheet' type = 'text/css' href = 'default.css'/>
+	</head>
+	<body>
+		<div id = 'inputScreen'>
+			<div class = 'inputFirst'>
+			<input type = 'text' id = 'firstInput'>
+			<p>Enter the first unary value!</p>
+			</div>
+			<div class = 'inputSecond'>
+				<input type = 'text' id = 'secondInput'>
+				<p>Enter the second unary value!</p>
+			</div>
+			<button class = 'buttonAdd'>ADDITION</button>
+			<button class = 'buttonMul'>MULTIPLY</button>
+		</div>
+		<div class = 'firstArrow hide'>
+			<p>First Unary Value</p>
+			<div id = 'firstString'></div>
+			<canvas id = 'canvas1' width = '300' height = '300' ></canvas>
+		</div>
+		<div class = 'secondArrow hide'>
+			<p>Second Unary Value</p>
+			<div id = 'secondString'></div>
+			<canvas id = 'canvas2' width = '300' height = '300' ></canvas>
+		</div>
+		<p class = 'result hide'>The addition is:</p>
+		<div class = 'multiplicationStatement hide'>(Takes the minimum count and performs repeated additions untill the count becomes 1)</div>
+		<div class = 'multiplicationInputs hide'>
+			<div class = 'firstMultiplicationInput'>First Unary Value</div>
+			<div class = 'secondMultiplicationInput'>Second Unary Value</div>
+		</div>
+		<div class = 'leastCount'></div>
+		<div class = 'multiplicationResult hide'>Calculating...</div>
+		<div class = 'multiplicationResultDisplay'></div>
+	</body>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	<script type = 'text/javascript' src = 'jquery.js'></script>
+	<script type = 'text/javascript' src = 'script.js'></script>
+</html>
