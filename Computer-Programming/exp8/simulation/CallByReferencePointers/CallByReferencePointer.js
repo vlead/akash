@@ -82,11 +82,6 @@ window.view = {
 		var element = document.getElementsByClassName(className);
 		return element[0];
 	},
-	// applyColorAtMemoryAddress: apply colour at given position in memory table.
-	applyColorAtMemoryAddress: function (id, color) {
-		var tableRow = document.getElementById(id);
-		tableRow.bgColor = color;
-	},
 	// getNextSiblingElement: return next sibling element.
 	getNextSiblingElement: function (element) {
 		var nextSiblingElement = element.nextSibling;
@@ -126,8 +121,6 @@ window.view = {
 		this.setInnerHtml('56byte3', '0');
 		this.setInnerHtml('56byte4', '9');
 		this.setInnerHtml('56variable', 'B');
-		this.applyColorAtMemoryAddress('memoryAddress60', 'yellow');
-		this.applyColorAtMemoryAddress('memoryAddress56', 'yellow');
 	},
 	// setValueAtAddress40And36: set value in memory map where address is 40 and 36.
 	setValueAtAddress40And36: function () {
@@ -141,8 +134,6 @@ window.view = {
 		this.setInnerHtml('36byte3', '0');
 		this.setInnerHtml('36byte4', '56');
 		this.setInnerHtml('36variable', 'Pb');
-		this.applyColorAtMemoryAddress('memoryAddress40', 'yellow');
-		this.applyColorAtMemoryAddress('memoryAddress36', 'yellow');
 	},
 	// setValueAtAddress32: set value in memory map where address is 32.
 	setValueAtAddress32: function () {
@@ -151,7 +142,6 @@ window.view = {
 		this.setInnerHtml('32byte3', '0');
 		this.setInnerHtml('32byte4', '5');
 		this.setInnerHtml('32variable', 'temp');
-		this.applyColorAtMemoryAddress('memoryAddress32', 'yellow');
 	},
 	// eraseValueAtAddress60And56: erase value from memory map where address is 60 and 56.
 	eraseValueAtAddress60And56: function () {
@@ -165,8 +155,6 @@ window.view = {
 		this.setInnerHtml('56byte3', '');
 		this.setInnerHtml('56byte4', '');
 		this.setInnerHtml('56variable', '');
-		this.applyColorAtMemoryAddress('memoryAddress60', 'white');
-		this.applyColorAtMemoryAddress('memoryAddress56', 'white');
 	},
 	// eraseValueAtAddress36And40: erase value from memory map where address is 36 and 40.
 	eraseValueAtAddress36And40: function () {
@@ -180,8 +168,6 @@ window.view = {
 		this.setInnerHtml('36byte3', '');
 		this.setInnerHtml('36byte4', '');
 		this.setInnerHtml('36variable', '');
-		this.applyColorAtMemoryAddress('memoryAddress40', 'white');
-		this.applyColorAtMemoryAddress('memoryAddress36', 'white');
 	},
 	// eraseValueAtAddress32: erase value from memory map where address is 32.
 	eraseValueAtAddress32: function () {
@@ -190,7 +176,6 @@ window.view = {
 		this.setInnerHtml('32byte3', '');
 		this.setInnerHtml('32byte4', '');
 		this.setInnerHtml('32variable', '');
-		this.applyColorAtMemoryAddress('memoryAddress32', 'white');
 	},
 	// swapValueBetweenAddress60And56: swaps value in memory map between address 60 and 56.
 	swapValueBetweenAddress60And56: function () {
